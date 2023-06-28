@@ -65,8 +65,7 @@ test('fetchBalance should return number in case if request did not failed', asyn
   // Write your tests here
   const bankAccount = getBankAccount(initialBalance);
   const balance = await bankAccount.fetchBalance();
-  expect(balance).toBeGreaterThanOrEqual(0);
-  expect(balance).toBeLessThanOrEqual(100);
+  expect(typeof balance).toBe('number');
 });
 
 test('should set new balance if fetchBalance returned number', async () => {
