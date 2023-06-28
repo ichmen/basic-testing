@@ -40,7 +40,7 @@ export class BankAccount {
     const balance = random(0, 100, false);
 
     const requestFailed = random(0, 1, false) === 0;
-
+    console.log(requestFailed);
     return requestFailed ? null : balance;
   }
 

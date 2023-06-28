@@ -5,6 +5,7 @@ import {
   getBankAccount,
   SynchronizationFailedError,
 } from '.';
+import _ from 'lodash';
 const initialBalance = 22;
 
 describe('BankAccount', () => {
@@ -64,6 +65,7 @@ test('should transfer money', () => {
 test('fetchBalance should return number in case if request did not failed', async () => {
   // Write your tests here
   const bankAccount = getBankAccount(initialBalance);
+  jest.spyOn(_, 'random').mockImplementation(() => 0.5);
   const balance = await bankAccount.fetchBalance();
   expect(typeof balance).toBe('number');
 });
